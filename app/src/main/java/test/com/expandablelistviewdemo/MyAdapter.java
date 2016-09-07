@@ -20,14 +20,12 @@ public class MyAdapter extends BaseExpandableListAdapter implements CustomExpand
     private Map<String, ArrayList<String>> datas = new HashMap<>();
     private Context context;
     private CustomExpandListview listview;
-    private HashMap<Integer, Integer> groupStatusMap;
 
     public MyAdapter(Context context, ArrayList<String> parent, Map<String, ArrayList<String>> datas, CustomExpandListview listview) {
         this.context = context;
         this.parent = parent;
         this.datas = datas;
         this.listview = listview;
-        groupStatusMap = new HashMap<Integer, Integer>();
     }
 
     @Override
@@ -129,19 +127,6 @@ public class MyAdapter extends BaseExpandableListAdapter implements CustomExpand
         }
     }
 
-    @Override
-    public void onHeadViewClick(int groupPosition, int status) {
-        groupStatusMap.put(groupPosition, status);
-    }
-
-    @Override
-    public int getHeadViewClickStatus(int groupPosition) {
-        if (groupStatusMap.containsKey(groupPosition)) {
-            return groupStatusMap.get(groupPosition);
-        } else {
-            return 0;
-        }
-    }
 
     /**
      * 子布局

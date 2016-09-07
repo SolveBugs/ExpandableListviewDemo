@@ -57,22 +57,6 @@ public class CustomExpandListview extends ExpandableListView implements
         void configureHeader(View header, int groupPosition,
                              int childPosition, int alpha);
 
-        /**
-         * 设置组按下的状态
-         *
-         * @param groupPosition
-         * @param status
-         */
-        void onHeadViewClick(int groupPosition, int status);
-
-        /**
-         * 获取组按下的状态
-         *
-         * @param groupPosition
-         * @return
-         */
-        int getHeadViewClickStatus(int groupPosition);
-
     }
 
     private static final int MAX_ALPHA = 255;
