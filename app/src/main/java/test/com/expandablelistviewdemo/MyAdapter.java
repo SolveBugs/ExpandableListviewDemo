@@ -106,6 +106,12 @@ public class MyAdapter extends BaseExpandableListAdapter implements CustomExpand
         return true;
     }
 
+    /**
+     *根据当前的groupPosition和childPosition判断指示布局是哪种状态（隐藏、可见、正在向上推）
+     * @param groupPosition
+     * @param childPosition
+     * @return
+     */
     @Override
     public int getHeaderState(int groupPosition, int childPosition) {
         final int childCount = getChildrenCount(groupPosition);
@@ -119,6 +125,13 @@ public class MyAdapter extends BaseExpandableListAdapter implements CustomExpand
         }
     }
 
+    /**
+     * 给指示布局设置内容
+     * @param header
+     * @param groupPosition
+     * @param childPosition
+     * @param alpha
+     */
     @Override
     public void configureHeader(View header, int groupPosition, int childPosition, int alpha) {
         if (groupPosition > -1) {
