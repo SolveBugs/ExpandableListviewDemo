@@ -39,8 +39,11 @@ public class MyAdapter extends BaseExpandableListAdapter implements CustomExpand
 
     @Override
     public int getChildrenCount(int i) {
-        String key = parent.get(i);
-        int size = datas.get(key).size();
+        int size = 0;
+        if (parent.size() > 0) {
+            String key = parent.get(i);
+            size = datas.get(key).size();
+        }
         return size;
     }
 
@@ -107,7 +110,8 @@ public class MyAdapter extends BaseExpandableListAdapter implements CustomExpand
     }
 
     /**
-     *根据当前的groupPosition和childPosition判断指示布局是哪种状态（隐藏、可见、正在向上推）
+     * 根据当前的groupPosition和childPosition判断指示布局是哪种状态（隐藏、可见、正在向上推）
+     *
      * @param groupPosition
      * @param childPosition
      * @return
@@ -127,6 +131,7 @@ public class MyAdapter extends BaseExpandableListAdapter implements CustomExpand
 
     /**
      * 给指示布局设置内容
+     *
      * @param header
      * @param groupPosition
      * @param childPosition
