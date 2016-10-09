@@ -40,7 +40,7 @@ public class MyAdapter extends BaseExpandableListAdapter implements CustomExpand
     @Override
     public int getChildrenCount(int i) {
         int size = 0;
-        if (parent.size() > 0) {
+        if (datas != null && parent != null && parent.size() > 0) {
             String key = parent.get(i);
             size = datas.get(key).size();
         }
